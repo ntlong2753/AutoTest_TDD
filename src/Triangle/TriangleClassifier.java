@@ -2,22 +2,17 @@ package Triangle;
 
 public class TriangleClassifier {
     public static String getTriangleType(double sideA, double sideB, double sideC) {
-        boolean inValidTriangle = sideA > 0 && sideB > 0 && sideC > 0;
-        if (inValidTriangle) {
-            boolean EquilateralTriangle = (sideA == sideB && sideA == sideC);
-            if (EquilateralTriangle) {
+        boolean positiveSides = sideA > 0 && sideB > 0 && sideC > 0;
+        boolean triangleInequality = (sideA + sideB > sideC)
+                && (sideB + sideC > sideA)
+                && (sideA + sideC > sideB);
+
+        if (positiveSides && triangleInequality) {
+            if (sideA == sideB && sideB == sideC) {
                 return "Tam giác đều";
-            }
-
-            boolean IsoscelesTriangle = (sideA == sideB || sideA == sideC || sideB == sideC);
-            if (IsoscelesTriangle) {
+            } else if (sideA == sideB || sideA == sideC || sideB == sideC) {
                 return "Tam giác cân";
-            }
-
-            boolean scaleneTriangle = (sideA + sideB > sideC)
-                    && (sideB + sideC > sideA)
-                    && (sideA + sideC > sideB);
-            if (scaleneTriangle) {
+            } else {
                 return "Tam giác thường";
             }
         }
