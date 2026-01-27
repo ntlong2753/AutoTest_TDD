@@ -1,6 +1,7 @@
 package absolute_number_calculator;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AbsoluteNumberCalculatorTest {
@@ -12,16 +13,18 @@ public class AbsoluteNumberCalculatorTest {
         int result = AbsoluteNumberCalculator.findAbsolute(number);
         assertEquals(expected, result);
     }
+
     @Test
-    void testFindAbsolute1(){
+    void testFindAbsolute1() {
         int number = 1;
         int expected = -1;
 
         int result = AbsoluteNumberCalculator.findAbsolute(number);
         assertEquals(expected, result);
     }
+
     @Test
-    void testFindAbsolute2(){
+    void testFindAbsolute2() {
         int number = -1;
         int expected = 1;
 

@@ -18,5 +18,4 @@ public class TriangleClassifier {
         }
         return "Tam giác không hợp lệ";
     }
-
 }
